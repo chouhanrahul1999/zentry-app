@@ -13,14 +13,14 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalvideos = 4;
-  const nextVedioRef = useRef<HTMLVideoElement>(null);
+  const totalVideos = 4;
+  const nextVideoRef = useRef<HTMLVideoElement>(null);
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
   };
 
-  const upcamingVideoIndex = (currentIndex % totalvideos) + 1;
+  const upcamingVideoIndex = (currentIndex % totalVideos) + 1;
 
   const handleMinVdClick = () => {
     setHasClicked(true);
@@ -29,7 +29,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if(loadedVideos === totalvideos - 1) {
+    if(loadedVideos === totalVideos - 1) {
         setIsLoading(false);
     }
   }, [loadedVideos])
@@ -49,7 +49,7 @@ const Hero = () => {
           duration: 1,
           ease: "power1.inOut",
           onStart: () => {
-            nextVedioRef.current?.play();
+            nextVideoRef.current?.play();
           },
         });
 
@@ -110,8 +110,8 @@ const Hero = () => {
               className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
             >
               <video
-                src={getVideoSrc((currentIndex % totalvideos) + 1)}
-                ref={nextVedioRef}
+                src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                ref={nextVideoRef}
                 loop
                 muted
                 id="current-video"
@@ -123,7 +123,7 @@ const Hero = () => {
 
           <video
             src={getVideoSrc(currentIndex)}
-            ref={nextVedioRef}
+            ref={nextVideoRef}
             loop
             muted
             id="next-video"
@@ -133,7 +133,7 @@ const Hero = () => {
 
           <video
             src={getVideoSrc(
-              currentIndex === totalvideos - 1 ? 1 : currentIndex,
+              currentIndex === totalVideos - 1 ? 1 : currentIndex,
             )}
             autoPlay
             loop

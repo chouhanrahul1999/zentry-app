@@ -8,7 +8,7 @@ const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, serIsIndicatorActive] = useState(false);
+  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);
 
@@ -44,7 +44,7 @@ const Navbar = () => {
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
 
-    serIsIndicatorActive((prev) => !prev);
+    setIsIndicatorActive((prev) => !prev);
   };
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <div
       ref={navContainerRef}
-      className="fixed inset-x-o top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
@@ -78,7 +78,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLocaleLowerCase()}`}
+                  href={`#${item.toLowerCase()}`}
                   className="nav-hover-btn"
                 >
                   {item}
