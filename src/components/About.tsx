@@ -43,12 +43,12 @@ const About = () => {
         </div>
       </div>
 
-      <div className="h-dvh md:w-screen w-full" id="clip">
+      <div className="h-dvh md:w-screen w-full " id="clip">
         <div className="mask-clip-path about-image">
           <img
             src="img/about.webp"
             alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
+            className="absolute md:px-0  left-0 top-0 size-full object-cover"
           />
         </div>
       </div>
