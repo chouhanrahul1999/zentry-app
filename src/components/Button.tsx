@@ -4,6 +4,7 @@ interface ButtonProps {
   containerClass: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const Button = ({

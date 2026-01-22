@@ -38,7 +38,11 @@ const Contact = () => {
             containerClass="special-font !md:text-[6.2rem] w-full font-zentry text-5xl! font-black! leading-[.9]!"
           />
 
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
+          <Button
+            title="contact us"
+            containerClass="mt-10 cursor-pointer"
+            onClick={() => window.open('mailto:chouhanrahul1999@gmail.com', '_blank')}
+          />
         </div>
       </div>
     </div>

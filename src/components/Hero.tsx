@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -20,19 +20,24 @@ const Hero = () => {
     setLoadedVideos((prev) => prev + 1);
   };
 
-  const upcamingVideoIndex = (currentIndex % totalVideos) + 1;
+  const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
   const handleMinVdClick = () => {
     setHasClicked(true);
 
-    setCurrentIndex(upcamingVideoIndex);
+    setCurrentIndex(upcomingVideoIndex);
+  };
+
+  const handleWatchTrailer = () => {
+    setHasClicked(true);
+    setCurrentIndex(upcomingVideoIndex);
   };
 
   useEffect(() => {
-    if(loadedVideos === totalVideos - 1) {
-        setIsLoading(false);
+    if (loadedVideos === totalVideos - 1) {
+      setIsLoading(false);
     }
-  }, [loadedVideos])
+  }, [loadedVideos]);
 
   useGSAP(
     () => {
@@ -161,6 +166,7 @@ const Hero = () => {
               title="Watch Trailer"
               leftIcon={<TiLocationArrow />}
               containerClass="!bg-yellow-300 flex-center gap-1"
+              onClick={handleWatchTrailer}
             />
           </div>
         </div>
