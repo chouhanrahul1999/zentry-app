@@ -18,15 +18,15 @@ const About = () => {
       },
     });
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
+      width: "100%",
+      height: "100%",
       borderRadius: 0,
     });
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen">
-      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
+    <div id="about" className="min-h-screen w-full overflow-hidden">
+      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5 px-4">
         <h2 className="font-general text-sm uppercase md:text-[10px]">
           Welcome to Zentry
         </h2>
@@ -36,14 +36,14 @@ const About = () => {
           containerClass="mt-5 !text-black text-center"
         />
 
-        <div className="about-subtext">
+        <div className="about-subtext text-center">
           <p>The Game begins-your life, now an epic MMORPG</p>
 
-          <p>Zentry unites every player from countkess game and platforms</p>
+          <p>Zentry unites every player from countless game and platforms</p>
         </div>
       </div>
 
-      <div className="h-dvh w-screen" id="clip">
+      <div className="h-dvh md:w-screen w-full" id="clip">
         <div className="mask-clip-path about-image">
           <img
             src="img/about.webp"
